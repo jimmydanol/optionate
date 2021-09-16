@@ -1,7 +1,7 @@
 streamlit
 pandas
 plotly
-psycopg2
+psycopg2-binary
 requests
 tweepy
 numpy
