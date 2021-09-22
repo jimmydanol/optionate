@@ -20,3 +20,12 @@ df = pd.DataFrame(np.random.randn(50, 20), columns=('col %d' % i for i in range(
 st.dataframe(df)
 
 # st.sidebar.write(df)
+
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
