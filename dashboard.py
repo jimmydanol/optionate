@@ -7,7 +7,7 @@ st.title("This is the title")
 st.header("This is a header")
 
 st.subheader("Subheader")
-st.write("This is regular text")
+st.write("This is regular test")
 
 '''
 # This is the document title
