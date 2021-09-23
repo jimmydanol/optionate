@@ -23,6 +23,8 @@ st.dataframe(df)
 
 r = requests.get("https://api.stocktwits.com/api/2/streams/symbol/AAPL.json")
 
+data = r.json()
+st.write(data)
 
 hide_st_style = """
             <style>
