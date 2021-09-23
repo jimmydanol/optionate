@@ -22,3 +22,13 @@ st.dataframe(df)
 # st.sidebar.write(df)
 
 r = requests.get("https://api.stocktwits.com/api/2/streams/symbol/AAPL.json")
+
+
+hide_st_style = """
+            <style>
+            MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
