@@ -23,10 +23,12 @@ st.sidebar.title("Options")
 
 option = st.sidebar.selectbox("Which Dashboard?", ('twitter', 'wallstreetbets', 'stocktwits', 'chart', 'pattern'))
 
-r = requests.get("https://api.stocktwits.com/api/2/streams/symbol/AAPL.json")
+if option == 'stocktwits':
+    pass
+    r = requests.get("https://api.stocktwits.com/api/2/streams/symbol/AAPL.json")
 
-data = r.json()
-st.write(data)
+    data = r.json()
+    st.write(data)
 
 hide_st_style = """
             <style>
