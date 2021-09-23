@@ -28,7 +28,11 @@ if option == 'stocktwits':
     r = requests.get("https://api.stocktwits.com/api/2/streams/symbol/AAPL.json")
 
     data = r.json()
-    st.write(data)
+
+    for message in data['messages']:
+        st.write(message)
+
+    
 
 hide_st_style = """
             <style>
