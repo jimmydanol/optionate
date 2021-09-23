@@ -3,18 +3,18 @@ import pandas as pd
 import numpy as np
 import requests
 
-st.title("This is the Nonsense")
+# st.title("This is the Nonsense")
 
-st.header("This is a Cedar Beeters")
+# st.header("This is a Cedar Beeters")
 
-st.subheader("Subheader")
-st.write("This is regular text")
+# st.subheader("Subheader")
+# st.write("This is regular text")
 
-'''
-# This is the document title
+# '''
+# # This is the document title
 
-This is some _markdown_.
-'''
+# This is some _markdown_.
+# '''
 
 df = pd.DataFrame(np.random.randn(50, 20), columns=('col %d' % i for i in range(20)))
 # st.dataframe(df)
@@ -24,15 +24,17 @@ st.sidebar.title("Options")
 option = st.sidebar.selectbox("Which Dashboard?", ('twitter', 'wallstreetbets', 'stocktwits', 'chart', 'pattern'))
 
 if option == 'stocktwits':
-    pass
+    st.sidebar.text_input("Symbol", value='AAPL', max_chars=None, key=None, type='default')
     r = requests.get("https://api.stocktwits.com/api/2/streams/symbol/AAPL.json")
 
     data = r.json()
 
     for message in data['messages']:
-        st.write(message['body'])
-        st.write(message['created_at'])
+        st.image(message['user']['avatar_url'])
         st.write(message['user']['username'])
+        st.write(message['created_at'])
+        st.write(message['body'])
+
 
     
 
