@@ -15,8 +15,9 @@ st.write("This is regular text")
 This is some _markdown_.
 '''
 
-
 df = pd.DataFrame(np.random.randn(50, 20), columns=('col %d' % i for i in range(20)))
 st.dataframe(df)
 
 # st.sidebar.write(df)
+
+r = requests.get("https://api.stocktwits.com/api/2/streams/symbol/AAPL.json")
