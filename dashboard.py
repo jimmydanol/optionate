@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import requests
+import tweepy
 
 # st.title("This is the Nonsense")
 
@@ -24,8 +25,8 @@ st.sidebar.title("Options")
 option = st.sidebar.selectbox("Which Dashboard?", ('twitter', 'wallstreetbets', 'stocktwits', 'chart', 'pattern'))
 
 if option == 'stocktwits':
-    st.sidebar.text_input("Symbol", value='AAPL', max_chars=None, key=None, type='default')
-    r = requests.get("https://api.stocktwits.com/api/2/streams/symbol/AAPL.json")
+    symbol = st.sidebar.text_input("Symbol", value='AAPL', max_chars=5)
+    r = requests.get(f"https://api.stocktwits.com/api/2/streams/symbol/{symbol}.json")
 
     data = r.json()
 
