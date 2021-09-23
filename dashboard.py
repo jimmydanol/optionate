@@ -30,18 +30,3 @@ hide_st_style = """
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
-footer {
-	
-	visibility: hidden;
-	
-	}
-# footer {visibility: hidden;}.stApp { bottom: 10px;} # 调整footer在底部的位置
-footer:after {
-	content:'goodbye'; 
-	visibility: visible;
-	display: block;
-	position: relative;
-	#background-color: red;
-	padding: 5px;
-	top: 2px;
-}
