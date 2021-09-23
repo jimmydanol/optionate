@@ -30,7 +30,9 @@ if option == 'stocktwits':
     data = r.json()
 
     for message in data['messages']:
-        st.write(message)
+        st.write(message['body'])
+        st.write(message['created_at'])
+        st.write(message['user']['username'])
 
     
 
