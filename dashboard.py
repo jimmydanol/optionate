@@ -4,7 +4,7 @@ import numpy as np
 
 st.title("This is the Nonsense")
 
-st.header("This is a Cedar Beeter")
+st.header("This is a Cedar Beeters")
 
 st.subheader("Subheader")
 st.write("This is regular text")
