@@ -32,20 +32,29 @@ option = st.sidebar.selectbox("Which Dashboard?", ('twitter', 'wallstreetbets', 
 
 st.header(option)
 
+
 if option == 'twitter':
     st.subheader('twitter dashboard logic')
-    user = st.sidebar.text_input("User", value='traderstewie')
+    # user = st.sidebar.text_input("User", value='traderstewie')
+    
+    for username in config.TWITTER_USERNAMES:
 
-    tweets = api.user_timeline(user)
-    for tweet in tweets:
-        if '$' in tweet.text:
-            words = tweet.text.split(' ')
-            for word in words:
-                if word.startswith('$') and word[1:].isalpha():
-                    symbol = word[1:]
-                    st.write(symbol)
-                    st.write(tweet.text)
-                    st.image(f"https://finviz.com/chart.ashx?t={symbol}")
+        user = api.get_user(username)
+
+        tweets = api.user_timeline(username)
+
+        st.image(user.profile_image_url)
+
+        for tweet in tweets:
+
+            if '$' in tweet.text:
+                words = tweet.text.split(' ')
+                for word in words:
+                    if word.startswith('$') and word[1:].isalpha():
+                        symbol = word[1:]
+                        st.write(symbol)
+                        st.write(tweet.text)
+                        st.image(f"https://finviz.com/chart.ashx?t={symbol}")
 
 if option == 'stocktwits':
     symbol = st.sidebar.text_input("Symbol", value='AAPL', max_chars=5)
