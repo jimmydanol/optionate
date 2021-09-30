@@ -118,6 +118,8 @@ if option == 'mortgage':
         st.write('I love you, big guy')
     elif user == ('river'):
         st.write('I love you, big chomper') 
+    elif user == ('tao'):
+        st.write("I love you, lil' Mama")
     else:
         st.write(f"{user}")
 
